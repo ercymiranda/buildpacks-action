@@ -1,6 +1,6 @@
 FROM docker:19.03-dind
 
-ENV VERSION=v0.13.1
+ENV VERSION=v0.17.0
 
 RUN apk add --update --no-cache \
         curl \

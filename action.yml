@@ -26,6 +26,9 @@ inputs:
     required: false
   registry:
     description: 'Image repository for publishing'
+  cache-image:
+    description: 'Image repository for caching'
+    required: false
   publish:
     description: 'Set true to push image to registry'
     required: false

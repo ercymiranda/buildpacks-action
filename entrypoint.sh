@@ -34,9 +34,11 @@ if [ -n "$INPUT_PUBLISH" ]; then
   publish=" --publish"
 fi
 
+INPUT_CACHE_IMAGE="$(env | sed -n 's/^INPUT_CACHE-IMAGE=\(.*\)/\1/p')"
+
 cache_image=""
-if [ -n "$INPUT_CACHE-IMAGE" ]; then
-  cache_image=" --cache-image $INPUT_CACHE-IMAGE"
+if [ -n "$INPUT_CACHE_IMAGE" ]; then
+  cache_image=" --cache-image $INPUT_CACHE_IMAGE"
 fi
 
 command="pack build ${image_name} ${env_str} --path ${INPUT_PATH} ${buildpacks} --builder ${INPUT_BUILDER} ${cache_image} ${publish}"

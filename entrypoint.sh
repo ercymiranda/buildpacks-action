@@ -35,8 +35,8 @@ if [ -n "$INPUT_PUBLISH" ]; then
 fi
 
 cache_image=""
-if [ -n "$INPUT_CACHE_IMAGE" ]; then
-  cache_image=" --cache-image $INPUT_CACHE_IMAGE"
+if [ -n "$INPUT_CACHE-IMAGE" ]; then
+  cache_image=" --cache-image $INPUT_CACHE-IMAGE"
 fi
 
 command="pack build ${image_name} ${env_str} --path ${INPUT_PATH} ${buildpacks} --builder ${INPUT_BUILDER} ${cache_image} ${publish}"
